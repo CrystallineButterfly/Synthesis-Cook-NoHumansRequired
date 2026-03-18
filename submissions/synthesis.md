@@ -1,6 +1,6 @@
 # Autonomous Public Goods Chef
 
-- **Repo:** https://github.com/CrystallineButterfly/Synthesis-Cook-NoHumansRequired
+- **Repo:** TODO_GITHUB_URL/Synthesis-Cook-NoHumansRequired
 - **Primary track:** Protocol Labs Let the Agent Cook
 - **Overlap targets:** ERC-8004 Receipts, Venice Private Agents, Filecoin, Slice, ENS, Bankr Gateway, Lido stETH Treasury
 - **Primary contract:** AutonomousChefController
@@ -18,10 +18,10 @@ A no-human-input swarm that discovers public-goods funding gaps, plans a bounded
   "status": "verified",
   "project_name": "Autonomous Public Goods Chef",
   "track": "Protocol Labs Let the Agent Cook",
-  "plan_id": "0xe98d9525e17a6b6217e85970ddf89a05bfab26363de16d61154865c892866b23",
-  "simulation_hash": "0x00d33e64b6e9c9654960dc7f38edd31c0a6d3a9f100b93484ea3116f9c55a238",
+  "plan_id": "0xa59ce624a20ea61a1f18dfb530268e0ea6b405f77b70a9c50485c340b4c97a26",
+  "simulation_hash": "0x65ed8b0667d0fce85fcb7d0dabf09c5ae3937b514be1e56693a4ea8d7799f61d",
   "execution_status": "awaiting_credentials",
   "tx_ids": [],
-  "created_at": "2026-03-18T21:43:56+00:00"
+  "created_at": "2026-03-18T23:01:09+00:00"
 }
 ```
