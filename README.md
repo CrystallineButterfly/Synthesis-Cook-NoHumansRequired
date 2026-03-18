@@ -1,15 +1,25 @@
 # Autonomous Public Goods Chef
 
-- **Repo:** `Synthesis-Cook-NoHumansRequired`
+- **Repo:** [Synthesis-Cook-NoHumansRequired](https://github.com/CrystallineButterfly/Synthesis-Cook-NoHumansRequired)
 - **Primary track:** Protocol Labs Let the Agent Cook
 - **Category:** autonomy
+- **Primary contract:** `AutonomousChefController`
+- **Primary module:** `autonomous_chef`
 - **Submission status:** implementation ready, waiting for credentials and TxIDs.
+
+## What this repo does
 
 A no-human-input swarm that discovers public-goods funding gaps, plans a bounded intervention, executes a dry-run-validated action, verifies impact, and self-files receipts.
 
-## Selected concept
+## Why this build matters
 
 A discover-plan-execute-verify loop monitors public-goods and treasury signals, drafts a bounded action, records a dry-run hash, and only then produces an execution bundle. The contract side stores action policies and proof commitments so the project demonstrates no-human-required behavior without pretending live keys exist.
+
+## Submission fit
+
+- **Primary track:** Protocol Labs Let the Agent Cook
+- **Overlap targets:** ERC-8004 Receipts, Venice Private Agents, Filecoin, Slice, ENS, Bankr Gateway, Lido stETH Treasury
+- **Partners covered:** ERC-8004 Receipts, Venice, Filecoin, Slice, ENS, Bankr Gateway, Lido
 
 ## Idea shortlist
 
@@ -17,11 +27,7 @@ A discover-plan-execute-verify loop monitors public-goods and treasury signals, 
 2. Status L2 Gasless Deployment Bot
 3. Private Yield Reallocator
 
-## Partners covered
-
-ERC-8004 Receipts, Venice, Filecoin, Slice, ENS, Bankr Gateway, Lido
-
-## Architecture
+## System graph
 
 ```mermaid
 flowchart TD
@@ -39,14 +45,36 @@ flowchart TD
     Contract --> bankr_gateway[Bankr Gateway]
 ```
 
-## Repository layout
+## Repository contents
 
-- `src/`: shared policy contracts plus the repo-specific wrapper contract.
-- `script/`: Foundry deployment entrypoint.
-- `agents/`: Python runtime, partner adapters, and project metadata.
-- `scripts/`: CLI utilities for running the loop and rendering submissions.
-- `docs/`: architecture, credentials, demo script, and security notes.
-- `submissions/`: generated `synthesis.md` snippet for this repo.
+| Path | What it contains |
+| --- | --- |
+| `src/` | Shared policy contracts plus the repo-specific wrapper contract. |
+| `script/Deploy.s.sol` | Foundry deployment entrypoint for the policy contract. |
+| `agents/` | Python runtime, project spec, env handling, and partner adapters. |
+| `scripts/` | Terminal entrypoints for run, demo planning, and submission rendering. |
+| `docs/` | Architecture, credentials, security notes, and demo steps. |
+| `submissions/` | Generated `synthesis.md` snippet for this repo. |
+| `test/` | Foundry tests for the Solidity control layer. |
+| `tests/` | Python tests for runtime and project context. |
+| `agent.json` | Submission-facing agent manifest. |
+| `agent_log.json` | Local execution log and status trail. |
+
+## Autonomy loop
+
+1. Discover signals relevant to the repo track and its overlap targets.
+2. Build a bounded plan with per-action and compute caps.
+3. Persist a dry-run artifact before any live execution.
+4. Enforce onchain policy through the guarded contract wrapper.
+5. Verify outputs, update receipts, and render submission material.
+
+## Security controls
+
+- Admin-managed allowlists for targets and selectors.
+- Per-action caps, daily caps, cooldown windows, and a principal floor.
+- Reporter-only receipt anchoring and proof attachment.
+- Env-only secrets; no committed private keys or partner tokens.
+- Pause switch plus dry-run-first execution flow.
 
 ## Action catalog
 
@@ -59,6 +87,18 @@ flowchart TD
 | `ens_ens_publish` | ENS | Use ENS for a bounded action in this repo. | $5 | low |
 | `bankr_gateway_compute_route` | Bankr Gateway | Use Bankr Gateway for a bounded action in this repo. | $10 | high |
 | `lido_yield_route` | Lido | Use Lido for a bounded action in this repo. | $200 | medium |
+
+## Local terminal flow (Anvil + Sepolia)
+
+```bash
+export SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_KEY
+anvil --fork-url "$SEPOLIA_RPC_URL" --chain-id 11155111
+cp .env.example .env
+# keep private keys only in .env; TODO.md stays local-only too
+forge script script/Deploy.s.sol --rpc-url "$RPC_URL" --broadcast
+python3 scripts/run_agent.py
+python3 scripts/render_submission.py
+```
 
 ## Commands
 
