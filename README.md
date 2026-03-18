@@ -1,118 +1,91 @@
 # Autonomous Public Goods Chef
 
-        **Repo:** `Synthesis-Cook-NoHumansRequired`  
-        **Primary track:** Protocol Labs Let the Agent Cook  
-        **Submission hold:** wait for human approval before registration or live submission.
+- **Repo:** `Synthesis-Cook-NoHumansRequired`
+- **Primary track:** Protocol Labs Let the Agent Cook
+- **Category:** autonomy
+- **Submission status:** implementation ready, waiting for credentials and TxIDs.
 
-        A no-human-input swarm that discovers public-goods funding gaps, plans a bounded intervention, executes a dry-run-validated action, verifies impact, and self-files receipts.
+A no-human-input swarm that discovers public-goods funding gaps, plans a bounded intervention, executes a dry-run-validated action, verifies impact, and self-files receipts.
 
-        ## Selected concept
+## Selected concept
 
-        A discover-plan-execute-verify loop monitors public-goods and treasury signals, drafts a bounded action, records a dry-run hash, and only then produces an execution bundle. The contract side stores action policies and proof commitments so the project demonstrates no-human-required behavior without pretending live keys exist.
+A discover-plan-execute-verify loop monitors public-goods and treasury signals, drafts a bounded action, records a dry-run hash, and only then produces an execution bundle. The contract side stores action policies and proof commitments so the project demonstrates no-human-required behavior without pretending live keys exist.
 
-        ## Idea set
+## Idea shortlist
 
-        1. Octant Micro-Grant Chef
+1. Octant Micro-Grant Chef
 2. Status L2 Gasless Deployment Bot
 3. Private Yield Reallocator
 
-        ## Prize overlap targets
+## Partners covered
 
-        - ERC-8004 Receipts
-- Venice Private Agents
-- Filecoin
-- Slice
-- ENS
-- Bankr Gateway
-- Lido stETH Treasury
+ERC-8004 Receipts, Venice, Filecoin, Slice, ENS, Bankr Gateway, Lido
 
-        ## Architecture
+## Architecture
 
-        ```mermaid
-        flowchart TD
-    Signals[Protocol Labs Let the Agent Cook signals] --> Discover[Discover]
-    Discover --> Plan[Plan bounded action]
-    Plan --> DryRun[Dry run + policy check]
-    DryRun --> Guard[AutonomousChefController]
-    Guard --> Execute[Execute when live mode is enabled]
-    Execute --> Verify[Verify proofs + receipts]
-    Verify --> Persist[Write agent_log.json + submission snippet]
-    Persist --> Storage[Store proof plan for Filecoin / receipts]
-        ```
+```mermaid
+flowchart TD
+    Signals[Discover signals]
+    Planner[Agent runtime]
+    DryRun[Dry-run artifact]
+    Contract[AutonomousChefController policy contract]
+    Verify[Verify and render submission]
+    Signals --> Planner --> DryRun --> Contract --> Verify
+    Contract --> erc_8004_receipts[ERC-8004 Receipts]
+    Contract --> venice[Venice]
+    Contract --> filecoin[Filecoin]
+    Contract --> slice[Slice]
+    Contract --> ens[ENS]
+    Contract --> bankr_gateway[Bankr Gateway]
+```
 
-        ## Repo structure
+## Repository layout
 
-        ```text
-        Synthesis-Cook-NoHumansRequired/
-├── README.md
-├── LICENSE
-├── .env.example
-├── .gitignore
-├── agent.json
-├── agent_log.json
-├── pyproject.toml
-├── Makefile
-├── docs/
-│   ├── architecture.mmd
-│   ├── demo_video_script.md
-│   └── security.md
-├── src/
-│   └── AutonomousChefController.sol
-├── script/
-│   └── Deploy.s.sol
-├── agents/
-│   ├── __init__.py
-│   └── autonomous_chef.py
-├── scripts/
-│   ├── run_agent.py
-│   └── plan_live_demo.py
-├── submissions/
-│   └── synthesis.md
-└── tests/
-    └── test_project_context.py
-        ```
+- `src/`: shared policy contracts plus the repo-specific wrapper contract.
+- `script/`: Foundry deployment entrypoint.
+- `agents/`: Python runtime, partner adapters, and project metadata.
+- `scripts/`: CLI utilities for running the loop and rendering submissions.
+- `docs/`: architecture, credentials, demo script, and security notes.
+- `submissions/`: generated `synthesis.md` snippet for this repo.
 
-        ## Tech stack
+## Action catalog
 
-        Solidity 0.8.24 skeleton, Python 3.13 standard library, JSON manifests, Foundry-style layout, MIT license
+| Action | Partner | Purpose | Max USD | Sensitivity |
+| --- | --- | --- | --- | --- |
+| `erc_8004_receipts_receipt_anchor` | ERC-8004 Receipts | Use ERC-8004 Receipts for a bounded action in this repo. | $1 | medium |
+| `venice_private_analysis` | Venice | Use Venice for a bounded action in this repo. | $5 | high |
+| `filecoin_proof_store` | Filecoin | Use Filecoin for a bounded action in this repo. | $20 | medium |
+| `slice_checkout_hook` | Slice | Use Slice for a bounded action in this repo. | $35 | medium |
+| `ens_ens_publish` | ENS | Use ENS for a bounded action in this repo. | $5 | low |
+| `bankr_gateway_compute_route` | Bankr Gateway | Use Bankr Gateway for a bounded action in this repo. | $10 | high |
+| `lido_yield_route` | Lido | Use Lido for a bounded action in this repo. | $200 | medium |
 
-        ## Security guardrails
+## Commands
 
-        - principal and spend policies are separated by design
-        - whitelist, cap, and cooldown checks gate every action
-        - dry-run hashes are recorded before any live execution path
-        - compute budgets are explicit and live mode is opt-in
-        - secrets are loaded from environment variables only
-        - structured logs are appended for every discover-plan-execute-verify step
+```bash
+python3 -m unittest discover -s tests
+forge test
+python3 scripts/run_agent.py
+python3 scripts/plan_live_demo.py
+python3 scripts/render_submission.py
+```
 
-        ## Autonomy loop
+## Credentials
 
-        1. Discover candidate signals and external state.
-2. Plan an action bundle with explicit budget, target, and purpose.
-3. Run a dry-run check and policy validation before any execution path.
-4. Execute only when live mode, wallets, and credentials are supplied.
-5. Verify receipts, proofs, and notes, then append structured logs.
+| Partner | Variables | Docs |
+| --- | --- | --- |
+| ERC-8004 Receipts | RPC_URL | https://eips.ethereum.org/EIPS/eip-8004 |
+| Venice | VENICE_API_KEY, VENICE_CHAT_COMPLETIONS_URL, VENICE_MODEL | https://docs.venice.ai/ |
+| Filecoin | FILECOIN_API_TOKEN, FILECOIN_UPLOAD_URL | https://docs.filecoin.cloud/ |
+| Slice | SLICE_API_KEY, SLICE_HOOK_URL | https://docs.slice.so/ |
+| ENS | ENS_NAME | https://docs.ens.domains/ |
+| Bankr Gateway | BANKR_API_KEY, BANKR_CHAT_COMPLETIONS_URL, BANKR_MODEL | https://bankr.bot/ |
+| Lido | RPC_URL | https://docs.lido.fi/ |
 
-        ## Local MVP status
+## Live demo plan
 
-        - [x] README, manifests, and security notes created
-        - [x] contract and agent-loop skeletons created
-        - [x] local git repository initialized with an initial commit
-        - [ ] operator wallet addresses attached
-        - [ ] real API keys added through `.env`
-        - [ ] live TxIDs recorded
-        - [ ] registration and submission executed
-
-        ## Live demo and TxID plan
-
-        1. load real credentials into `.env`
-        2. run `python3 scripts/plan_live_demo.py` to print the checklist
-        3. replace placeholder wallet fields in `agent.json`
-        4. enable `LIVE_MODE=true` for controlled execution
-        5. record resulting TxIDs and paste them into `submissions/synthesis.md`
-
-        ## Why this ranks first
-
-        This concept ranks highest because it overlaps ERC-8004 Receipts, Venice Private Agents, Filecoin while keeping the
-        execution envelope explicit, dry-run-first, and honest about what still needs
-        real credentials before anything touches a chain.
+1. Copy .env.example to .env and fill the required keys.
+2. Deploy the contract with forge script script/Deploy.s.sol --broadcast for AutonomousChefController.
+3. Run python3 scripts/run_agent.py to produce a dry run for autonomous_chef.
+4. Set LIVE_MODE=true and rerun python3 scripts/run_agent.py with real credentials.
+5. Run python3 scripts/render_submission.py and attach TxIDs plus repo links.
