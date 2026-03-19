@@ -7,5 +7,583 @@
     "details": {
       "status": "ready_for_credentials"
     }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0xaa722ecfa564ba6e1a13cc079b7caf8a2a1305f855e035f1f1c6efc9cca0eb5f"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x7d011621ca202eb7ce4dc700773ccf376e993f0a458a4a3daa52a36d53e05ce9"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "ENS_NAME",
+        "FILECOIN_API_TOKEN",
+        "FILECOIN_UPLOAD_URL",
+        "RPC_URL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Autonomous Public Goods Chef",
+      "track": "Protocol Labs Let the Agent Cook",
+      "plan_id": "0xaa722ecfa564ba6e1a13cc079b7caf8a2a1305f855e035f1f1c6efc9cca0eb5f",
+      "simulation_hash": "0x7d011621ca202eb7ce4dc700773ccf376e993f0a458a4a3daa52a36d53e05ce9",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:04+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0xaa722ecfa564ba6e1a13cc079b7caf8a2a1305f855e035f1f1c6efc9cca0eb5f"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x7d011621ca202eb7ce4dc700773ccf376e993f0a458a4a3daa52a36d53e05ce9"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "ENS_NAME",
+        "FILECOIN_API_TOKEN",
+        "FILECOIN_UPLOAD_URL",
+        "RPC_URL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:04+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Autonomous Public Goods Chef",
+      "track": "Protocol Labs Let the Agent Cook",
+      "plan_id": "0xaa722ecfa564ba6e1a13cc079b7caf8a2a1305f855e035f1f1c6efc9cca0eb5f",
+      "simulation_hash": "0x7d011621ca202eb7ce4dc700773ccf376e993f0a458a4a3daa52a36d53e05ce9",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:04+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:39:23.678178+00:00",
+    "stage": "security_review",
+    "actor": "audit_pass",
+    "message": "Completed the shared hardening and offline-artifact audit pass.",
+    "details": {
+      "status": "audited_ready_pending_live_credentials",
+      "primary_contract": "AutonomousChefController.sol"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:46+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:46+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x333e85093f0077cd4f563f2efd01ad36a73308507028d4f7e31bc5ac88157993",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:46+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xc3028b0d86b622c3204a7bc98154cac80f09e7d469070662c947d4d7aa05e014"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:46+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 4
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:48:46+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Autonomous Public Goods Chef",
+      "track": "Protocol Labs Let the Agent Cook",
+      "plan_id": "0x333e85093f0077cd4f563f2efd01ad36a73308507028d4f7e31bc5ac88157993",
+      "simulation_hash": "0xc3028b0d86b622c3204a7bc98154cac80f09e7d469070662c947d4d7aa05e014",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json",
+        "artifacts/filecoin/0x333e85093f0077cd4f563f2efd01ad36a73308507028d4f7e31bc5ac88157993.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/lido_yield_route.json"
+      ],
+      "partner_statuses": {
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "Slice": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "Lido": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:48:46+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:40+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:40+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xbd964ecb6b2ca625c5a46b8fab7f12a764dba9ec00adae19a32c162b25bf91da",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:40+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x44985f114ac5eefa1737d0cbfb520ac896dc71b0bdf89a81917fa216cccc8f06"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:40+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 4
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:40+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Autonomous Public Goods Chef",
+      "track": "Protocol Labs Let the Agent Cook",
+      "plan_id": "0xbd964ecb6b2ca625c5a46b8fab7f12a764dba9ec00adae19a32c162b25bf91da",
+      "simulation_hash": "0x44985f114ac5eefa1737d0cbfb520ac896dc71b0bdf89a81917fa216cccc8f06",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json",
+        "artifacts/filecoin/0xbd964ecb6b2ca625c5a46b8fab7f12a764dba9ec00adae19a32c162b25bf91da.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/lido_yield_route.json"
+      ],
+      "partner_statuses": {
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "Slice": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "Lido": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:50:40+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xb974be28f1c7837f609f109e28b9667cca6a1fb9065ddfcf0c5b67c35ae5dc32",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x15290016acaa42060b73bc8b745f02935a2c2abbd0fe285a9e1ac16b542dbcc7"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 4
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:47+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Autonomous Public Goods Chef",
+      "track": "Protocol Labs Let the Agent Cook",
+      "plan_id": "0xb974be28f1c7837f609f109e28b9667cca6a1fb9065ddfcf0c5b67c35ae5dc32",
+      "simulation_hash": "0x15290016acaa42060b73bc8b745f02935a2c2abbd0fe285a9e1ac16b542dbcc7",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json",
+        "artifacts/filecoin/0xb974be28f1c7837f609f109e28b9667cca6a1fb9065ddfcf0c5b67c35ae5dc32.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/lido_yield_route.json"
+      ],
+      "partner_statuses": {
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "Slice": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "Lido": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:51:47+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:10+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "problem_signal",
+          "description": "Discovery inputs used to detect a real opportunity.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Budget, caps, and cooldown policy state.",
+          "score": 90
+        },
+        {
+          "name": "execution_bundle",
+          "description": "Dry-run and live execution bundle metadata.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Submission notes and final verification digests.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:10+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xc4912c5dd8c7d404a09afa18c6fe16cd84871c08e5c3537d8bb1b150e1dc4ed1",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:10+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xa7ed24b1d31d2ef8f150f72844536e23708d5d0854766103a1916500fb37bf40"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:10+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "BANKR_API_KEY",
+        "BANKR_CHAT_COMPLETIONS_URL",
+        "BANKR_MODEL",
+        "SLICE_API_KEY",
+        "SLICE_HOOK_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 4
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:10+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Autonomous Public Goods Chef",
+      "track": "Protocol Labs Let the Agent Cook",
+      "plan_id": "0xc4912c5dd8c7d404a09afa18c6fe16cd84871c08e5c3537d8bb1b150e1dc4ed1",
+      "simulation_hash": "0xa7ed24b1d31d2ef8f150f72844536e23708d5d0854766103a1916500fb37bf40",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/erc_8004_receipts_receipt_anchor.json",
+        "artifacts/filecoin/0xc4912c5dd8c7d404a09afa18c6fe16cd84871c08e5c3537d8bb1b150e1dc4ed1.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/lido_yield_route.json"
+      ],
+      "partner_statuses": {
+        "ERC-8004 Receipts": "prepared_contract_call",
+        "Venice": "awaiting_credentials",
+        "Filecoin": "prepared_filecoin_bundle",
+        "Slice": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Bankr Gateway": "awaiting_credentials",
+        "Lido": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:52:10+00:00"
+    }
   }
 ]
